@@ -1,0 +1,17 @@
+<div class="bottom">
+    <div class="copyrightTop">
+        <div class="copyright_txt">
+            <small class="copyright">
+                <span><?= $block->escapeHtml($block->getCopyright()) ?></span>
+            </small>
+        </div>
+        <div class="credit-card">
+            <?php echo $block->getCmsBlock('credit-card'); ?>
+        </div>
+    </div>
+    <div class="copyrightBottom">
+        <div class="listLogo">
+            <?php echo $block->getCmsBlock('footer-logo-bottom'); ?>
+        </div>
+    </div>
+</div>

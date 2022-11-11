@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="form.subscribe" template="HoangHiep_ModuleCustom::subscribe.phtml" />
+        <referenceContainer name = "footer-container">
+            <container name = "footer.newsletter" label="footerNewsletter" htmlTag="div" htmlClass="newsletter-container" before="-">
+                <block class="Magento\Newsletter\Block\Subscribe" name="HoangHiep_ModuleCustom" template="HoangHiep_ModuleCustom::subscribe.phtml" />
+            </container>
+            <container name = "footer.content" label="footerContent" htmlTag="div" htmlClass="footer-contentTop" after="footer.newsletter">
+                <block class="HoangHiep\ModuleCustom\Block\ContentTopFooter" name="footer.contentTop" template="HoangHiep_ModuleCustom::content_top_footer.phtml" />
+            </container>
+            <container name = "footer.bottom" label="footerContentBottom" htmlTag="div" htmlClass="footer-contentBottom" after="footer.content">
+                <block class="HoangHiep\ModuleCustom\Block\Copyright" name="footer.contentBottom" template="HoangHiep_ModuleCustom::html/copyright.phtml" />
+            </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="footer.newletter" />
+
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+    </body>
+</page>
